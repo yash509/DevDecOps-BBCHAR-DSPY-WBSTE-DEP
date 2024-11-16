@@ -1,27 +1,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: countrybank-green
+  name: bb-movie-char-green
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      app: countrybank
+      app: bb-movie-char
       version: green
   template:
     metadata:
       labels:
-        app: countrybank
+        app: bb-movie-char
         version: green
     spec:
       containers:
-      - name: countrybank
-        image: yash5090/countrybank:green # Adjust the image tag for the green version
+      - name: bb-movie-char
+        image: yash5090/bb-movie-char:green # Adjust the image tag for the green version
         ports:
         - containerPort: 3000
         # env:
         # - name: SPRING_DATASOURCE_URL
-        #   value: jdbc:mysql://mysql-service:3306/countrybankdb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+        #   value: jdbc:mysql://mysql-service:3306/bb-movie-chardb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
         # - name: SPRING_DATASOURCE_USERNAME
         #   value: root
         # - name: SPRING_DATASOURCE_PASSWORD
